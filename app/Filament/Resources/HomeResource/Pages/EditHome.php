@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\HomeResource\Pages;
 
 use App\Filament\Resources\HomeResource;
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Database\Eloquent\Model;
 
 class EditHome extends EditRecord
 {
@@ -12,8 +12,12 @@ class EditHome extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        return [
-            Actions\DeleteAction::make(),
-        ];
+        return [];
     }
+
+    public function getBreadcrumbs(): array
+    {
+        return [];
+    }
+
 }

@@ -10,8 +10,4 @@ class CreateHome extends CreateRecord
 {
     protected static string $resource = HomeResource::class;
 
-    protected function getActions(): array
-    {
-        return [];
-    }
 }

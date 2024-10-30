@@ -2,9 +2,12 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\HomeResource\Pages\EditHome;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -55,6 +58,46 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->navigationGroups(
+                $this->getNavigationGroups()
+            )
+            ->navigationItems(
+                $this->getNavigationItems()
+            );
+
     }
+
+    private function getNavigationGroups(): array
+    {
+        return [
+            NavigationGroup::make()
+                ->label('Home')
+                ->collapsible()
+                ->collapsed(),
+        ];
+    }
+
+    private function getNavigationItems(): array
+    {
+        return [
+            // Home
+            NavigationItem::make('Home')
+                ->url(fn (): string => EditHome::getUrl(['record' => 1]))
+            ->icon('heroicon-o-home')
+        ];
+    }
+
+    private function makeWildCardForRouteName(string $routeName, ?int $rewindSegments = 1): string
+    {
+        if (!str_contains($routeName, '.')) {
+            return $routeName;
+        }
+
+        $segments    = explode('.', $routeName);
+        $rootSegment = array_slice($segments, 0, count($segments) - $rewindSegments);
+
+        return implode('.', $rootSegment).'.*';
+    }
+
 }

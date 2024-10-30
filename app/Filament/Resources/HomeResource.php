@@ -15,36 +15,43 @@ class HomeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static bool $shouldRegisterNavigation = false;
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('title')
+                    ->label('Titulo')
+                    ->required()
                     ->columnSpan('full'),
+
                 TextInput::make('subtitle')
+                    ->label('Subtitulo')
+                    ->required()
                     ->columnSpan('full'),
+
                 TextInput::make('description_line_one')
+                    ->label('Descrição linha 1')
+                    ->required()
                     ->columnSpan('full'),
+
                 TextInput::make('description_line_two')
+                    ->label('Descrição linha 2')
+                    ->required()
                     ->columnSpan('full'),
-                TextInput::make('button')
-                    ->columnSpan('full'),
+
                 FileUpload::make('image')
+                    ->label('Imagem')
+                    ->required()
                     ->columnSpan('full'),
             ]);
-    }
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\CreateHome::route('/'),
-            'edit' => Pages\EditHome::route('/{record}/edit'),
+            'index' => Pages\EditHome::route('/{record}/edit'),
         ];
     }
 }

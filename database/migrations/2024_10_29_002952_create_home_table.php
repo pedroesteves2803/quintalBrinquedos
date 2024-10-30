@@ -14,7 +14,6 @@ return new class extends Migration
             $table->string('subtitle');
             $table->string('description_line_one');
             $table->string('description_line_two');
-            $table->string('button');
             $table->string('image');
             $table->timestamps();
         });
