@@ -15,7 +15,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->text('message');
-            $table->enum('subject_type', [1 => 'orcamento', 2 => 'informacoes', 3 => 'comentario']);
+            $table->integer('subject_type');
+            $table->boolean('active')->default(false);
             $table->timestamps();
         });
     }

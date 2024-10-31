@@ -14,33 +14,32 @@ use Filament\Resources\Resource;
 class ClientResource extends Resource
 {
     protected static ?string $model = Client::class;
-    protected static ?string $modelLabel            = 'Cliente';
-    protected static ?string $pluralModelLabel      = 'Clientes';
+    protected static ?string $modelLabel = 'Cliente';
+    protected static ?string $pluralModelLabel = 'Clientes';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                TextInput::make('title')
-                    ->label('Título')
-                    ->required()
-                    ->columnSpan('full'),
+        return $form->schema([
+            TextInput::make('title')
+                ->label('Título')
+                ->required()
+                ->columnSpan('full'),
 
-                TextInput::make('subtitle')
-                    ->label('Subtítulo')
-                    ->required()
-                    ->columnSpan('full'),
+            TextInput::make('subtitle')
+                ->label('Subtítulo')
+                ->required()
+                ->columnSpan('full'),
 
-                MarkdownEditor::make('description')
-                    ->label('Descrição')
-                    ->required()
-                    ->toolbarButtons([
-                        'redo',
-                        'undo',
-                    ])
-                    ->columnSpan('full'),
-            ]);
+            MarkdownEditor::make('description')
+                ->label('Descrição')
+                ->required()
+                ->toolbarButtons([
+                    'redo',
+                    'undo',
+                ])
+                ->columnSpan('full'),
+        ]);
     }
 
     public static function getPages(): array

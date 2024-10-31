@@ -15,38 +15,37 @@ use Filament\Resources\Resource;
 class AboutUsResource extends Resource
 {
     protected static ?string $model = AboutUs::class;
-    protected static ?string $modelLabel            = 'Sobre nós';
-    protected static ?string $pluralModelLabel      = 'Sobre nós';
+    protected static ?string $modelLabel = 'Sobre Nós';
+    protected static ?string $pluralModelLabel = 'Sobre Nós';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
-        return $form
-            ->schema([
-                TextInput::make('title')
-                    ->label('Título')
-                    ->required()
-                    ->columnSpan('full'),
+        return $form->schema([
+            TextInput::make('title')
+                ->label('Título')
+                ->required()
+                ->columnSpan('full'),
 
-                TextInput::make('subtitle')
-                    ->label('Subtítulo')
-                    ->required()
-                    ->columnSpan('full'),
+            TextInput::make('subtitle')
+                ->label('Subtítulo')
+                ->required()
+                ->columnSpan('full'),
 
-                MarkdownEditor::make('description')
-                    ->label('Descrição')
-                    ->required()
-                    ->toolbarButtons([
-                        'redo',
-                        'undo',
-                    ])
-                    ->columnSpan('full'),
+            MarkdownEditor::make('description')
+                ->label('Descrição')
+                ->required()
+                ->toolbarButtons([
+                    'redo',
+                    'undo',
+                ])
+                ->columnSpan('full'),
 
-                FileUpload::make('image')
-                    ->label('Imagem')
-                    ->required()
-                    ->columnSpan('full'),
-            ]);
+            FileUpload::make('image')
+                ->label('Imagem')
+                ->required()
+                ->columnSpan('full'),
+        ]);
     }
 
     public static function getPages(): array

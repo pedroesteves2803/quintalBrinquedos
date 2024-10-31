@@ -10,9 +10,11 @@ use App\Filament\Resources\CatalogResource\Pages\EditCatalog;
 use App\Filament\Resources\CategoriesResource\Pages\ListCategories;
 use App\Filament\Resources\ClientResource\Pages\EditClient;
 use App\Filament\Resources\ConfigResource\Pages\EditConfig;
+use App\Filament\Resources\ContactResource\Pages\ListContacts;
 use App\Filament\Resources\CountersResource\Pages\EditCounters;
 use App\Filament\Resources\CredibilityStatementsResource\Pages\EditCredibilityStatements;
 use App\Filament\Resources\HomeResource\Pages\EditHome;
+use App\Filament\Resources\ProductsResource\Pages\ListProducts;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -37,12 +39,14 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->profile()
             ->colors([
                 'primary' => '#F3B679',
                 'secondary' => '#006600',
                 'accent' => '#F29130',
             ])
-
+            ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('45px')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
@@ -83,45 +87,45 @@ class AdminPanelProvider extends PanelProvider
     {
         return [
             // Home
-            NavigationItem::make('Home')
+            NavigationItem::make('Início')
                 ->url(fn (): string => EditHome::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditHome::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-home'),
+                ->icon('heroicon-o-home'), // Ícone de casa
 
-            // Contadores
-            NavigationItem::make('Contadores')
+            // Estatísticas
+            NavigationItem::make('Estatísticas')
                 ->url(fn (): string => EditCounters::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditCounters::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-calculator'),
+                ->icon('heroicon-o-chart-bar'), // Ícone de gráfico
 
-            // Sobre nós
-            NavigationItem::make('Sobre nós')
+            // Sobre Nós
+            NavigationItem::make('Sobre Nós')
                 ->url(fn (): string => EditAboutUs::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditAboutUs::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-information-circle'),
+                ->icon('heroicon-o-information-circle'), // Ícone de informação
 
-            // Catalogo
-            NavigationItem::make('Página')
+            // Catálogo
+            NavigationItem::make('Página do Catálogo')
                 ->url(fn (): string => EditCatalog::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditCatalog::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-information-circle')
-            ->group('Cátalogo'),
+                ->icon('heroicon-o-book-open') // Ícone de livro aberto
+                ->group('Catálogo'),
 
             NavigationItem::make('Categorias')
                 ->url(fn (): string => ListCategories::class::getUrl())
@@ -130,10 +134,20 @@ class AdminPanelProvider extends PanelProvider
                         $this->makeWildCardForRouteName(ListCategories::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-information-circle')
-            ->group('Cátalogo'),
+                ->icon('heroicon-o-tag') // Ícone de etiqueta
+                ->group('Catálogo'),
 
-            // Credibilidade
+            NavigationItem::make('Produtos')
+                ->url(fn (): string => ListProducts::class::getUrl())
+                ->isActiveWhen(
+                    fn (): bool => request()->routeIs(
+                        $this->makeWildCardForRouteName(ListProducts::getRouteName())
+                    )
+                )
+                ->icon('heroicon-o-cube') // Ícone de cubo
+                ->group('Catálogo'),
+
+            // Depoimentos
             NavigationItem::make('Credibilidade')
                 ->url(fn (): string => EditCredibilityStatements::getUrl(['record' => 1]))
                 ->isActiveWhen(
@@ -141,28 +155,38 @@ class AdminPanelProvider extends PanelProvider
                         $this->makeWildCardForRouteName(EditCredibilityStatements::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-shield-check'),
+                ->icon('heroicon-o-shield-check'), // Ícone de balão de conversa
 
             // Orçamento
-            NavigationItem::make('Página')
+            NavigationItem::make('Página de Orçamento')
                 ->url(fn (): string => EditBudget::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditBudget::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-currency-dollar')
+                ->icon('heroicon-o-currency-dollar') // Ícone de dólar
                 ->group('Orçamento'),
 
-            // Cliente
-            NavigationItem::make('Cliente')
+            NavigationItem::make('Contatos')
+                ->url(fn (): string => ListContacts::getUrl())
+                ->isActiveWhen(
+                    fn (): bool => request()->routeIs(
+                        $this->makeWildCardForRouteName(ListContacts::getRouteName())
+                    )
+                )
+                ->icon('heroicon-o-phone') // Ícone de telefone
+                ->group('Orçamento'),
+
+            // Clientes
+            NavigationItem::make('Clientes')
                 ->url(fn (): string => EditClient::getUrl(['record' => 1]))
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
                         $this->makeWildCardForRouteName(EditClient::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-user-group'),
+                ->icon('heroicon-o-user-group'), // Ícone de grupo de usuários
 
             // Configurações
             NavigationItem::make('Configurações')
@@ -172,7 +196,7 @@ class AdminPanelProvider extends PanelProvider
                         $this->makeWildCardForRouteName(EditConfig::getRouteName())
                     )
                 )
-                ->icon('heroicon-o-cog'),
+                ->icon('heroicon-o-cog') // Ícone de engrenagem
         ];
     }
 

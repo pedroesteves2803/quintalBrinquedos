@@ -14,8 +14,8 @@ use Filament\Resources\Resource;
 class HomeResource extends Resource
 {
     protected static ?string $model = Home::class;
-    protected static ?string $modelLabel            = 'Home';
-    protected static ?string $pluralModelLabel      = 'Home';
+    protected static ?string $modelLabel = 'Home';
+    protected static ?string $pluralModelLabel = 'Home';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form

@@ -13,20 +13,19 @@ use Filament\Resources\Resource;
 class CountersResource extends Resource
 {
     protected static ?string $model = Counters::class;
-    protected static ?string $modelLabel            = 'Contador';
-    protected static ?string $pluralModelLabel      = 'Contadores';
+    protected static ?string $modelLabel = 'Contador';
+    protected static ?string $pluralModelLabel = 'Contadores';
     protected static bool $shouldRegisterNavigation = false;
-
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('counter_one')
-                ->numeric()
-                ->label('Contador 1')
-                ->required()
-                ->columnSpan('full'),
+                    ->numeric()
+                    ->label('Contador 1')
+                    ->required()
+                    ->columnSpan('full'),
 
                 TextInput::make('counter_one_text')
                     ->label('Descrição do Contador 1')

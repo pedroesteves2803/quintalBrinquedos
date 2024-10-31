@@ -14,8 +14,8 @@ use Filament\Resources\Resource;
 class CredibilityStatementsResource extends Resource
 {
     protected static ?string $model = CredibilityStatements::class;
-    protected static ?string $modelLabel            = 'Credibilidade';
-    protected static ?string $pluralModelLabel      = 'Credibilidades';
+    protected static ?string $modelLabel = 'Credibilidade';
+    protected static ?string $pluralModelLabel = 'Credibilidades';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
@@ -70,7 +70,6 @@ class CredibilityStatementsResource extends Resource
                     ->label('Subtítulo da Vantagem 3')
                     ->required()
                     ->columnSpan('full'),
-
             ]);
     }
 
