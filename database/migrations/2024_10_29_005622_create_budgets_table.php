@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('budgets', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('subject');
+            $table->string('subtitle');
             $table->timestamps();
         });
     }

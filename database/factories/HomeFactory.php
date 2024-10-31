@@ -17,10 +17,10 @@ class HomeFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->text(),
-            'subtitle' => fake()->text(),
-            'description_line_one' => fake()->text(),
-            'description_line_two' => fake()->text(),
+            'title' => 'CATÁLOGO | 2025',
+            'subtitle' => 'Os melhores brinquedos,',
+            'description_line_one' => 'Estão aqui',
+            'description_line_two' => 'Entregamos e instalamos',
             'image' => fake()->image(),
         ];
     }

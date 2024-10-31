@@ -12,13 +12,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('subtitle');
-            $table->string('description');
+            $table->text('description');
             $table->string('title_advantage_one');
             $table->string('subtitle_advantage_one');
             $table->string('title_advantage_two');
             $table->string('subtitle_advantage_two');
-            $table->string('title_advantage_tree');
-            $table->string('subtitle_advantage_tree');
+            $table->string('title_advantage_three');
+            $table->string('subtitle_advantage_three');
             $table->timestamps();
         });
     }
