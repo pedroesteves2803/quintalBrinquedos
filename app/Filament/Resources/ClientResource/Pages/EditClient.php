@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Filament\Resources\HomeResource\Pages;
+namespace App\Filament\Resources\ClientResource\Pages;
 
-use App\Filament\Resources\HomeResource;
+use App\Filament\Resources\ClientResource;
 use Filament\Resources\Pages\EditRecord;
 
-class EditHome extends EditRecord
+class EditClient extends EditRecord
 {
-    protected static string $resource = HomeResource::class;
+    protected static string $resource = ClientResource::class;
 
     protected function getHeaderActions(): array
     {
@@ -20,5 +20,4 @@ class EditHome extends EditRecord
     {
         return [];
     }
-
 }

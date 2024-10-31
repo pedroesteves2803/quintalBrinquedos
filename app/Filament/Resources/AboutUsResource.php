@@ -4,18 +4,19 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HomeResource\Pages;
-use App\Models\Home;
+use App\Filament\Resources\AboutUsResource\Pages;
+use App\Models\AboutUs;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 
-class HomeResource extends Resource
+class AboutUsResource extends Resource
 {
-    protected static ?string $model = Home::class;
-    protected static ?string $modelLabel            = 'Home';
-    protected static ?string $pluralModelLabel      = 'Home';
+    protected static ?string $model = AboutUs::class;
+    protected static ?string $modelLabel            = 'Sobre nós';
+    protected static ?string $pluralModelLabel      = 'Sobre nós';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
@@ -32,14 +33,13 @@ class HomeResource extends Resource
                     ->required()
                     ->columnSpan('full'),
 
-                TextInput::make('description_line_one')
-                    ->label('Descrição Linha 1')
+                MarkdownEditor::make('description')
+                    ->label('Descrição')
                     ->required()
-                    ->columnSpan('full'),
-
-                TextInput::make('description_line_two')
-                    ->label('Descrição Linha 2')
-                    ->required()
+                    ->toolbarButtons([
+                        'redo',
+                        'undo',
+                    ])
                     ->columnSpan('full'),
 
                 FileUpload::make('image')
@@ -52,7 +52,7 @@ class HomeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\EditHome::route('/{record}/edit'),
+            'index' => Pages\EditAboutUs::route('/{record}/edit'),
         ];
     }
 }

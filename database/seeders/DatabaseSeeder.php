@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\AboutUs;
@@ -11,10 +13,6 @@ use App\Models\Counters;
 use App\Models\CredibilityStatements;
 use App\Models\Home;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Database\Factories\AboutUsFactory;
-use Database\Factories\BudgetFactory;
-use Database\Factories\CountersFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -41,10 +39,6 @@ class DatabaseSeeder extends Seeder
         Client::factory()->create();
 
         Config::factory()->create();
-
-
-
-
 
     }
 }

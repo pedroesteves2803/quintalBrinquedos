@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\HomeResource\Pages;
-use App\Models\Home;
-use Filament\Forms\Components\FileUpload;
+use App\Filament\Resources\ClientResource\Pages;
+use App\Models\Client;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 
-class HomeResource extends Resource
+class ClientResource extends Resource
 {
-    protected static ?string $model = Home::class;
-    protected static ?string $modelLabel            = 'Home';
-    protected static ?string $pluralModelLabel      = 'Home';
+    protected static ?string $model = Client::class;
+    protected static ?string $modelLabel            = 'Cliente';
+    protected static ?string $pluralModelLabel      = 'Clientes';
     protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
@@ -32,19 +32,13 @@ class HomeResource extends Resource
                     ->required()
                     ->columnSpan('full'),
 
-                TextInput::make('description_line_one')
-                    ->label('Descrição Linha 1')
+                MarkdownEditor::make('description')
+                    ->label('Descrição')
                     ->required()
-                    ->columnSpan('full'),
-
-                TextInput::make('description_line_two')
-                    ->label('Descrição Linha 2')
-                    ->required()
-                    ->columnSpan('full'),
-
-                FileUpload::make('image')
-                    ->label('Imagem')
-                    ->required()
+                    ->toolbarButtons([
+                        'redo',
+                        'undo',
+                    ])
                     ->columnSpan('full'),
             ]);
     }
@@ -52,7 +46,7 @@ class HomeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\EditHome::route('/{record}/edit'),
+            'index' => Pages\EditClient::route('/{record}/edit'),
         ];
     }
 }
