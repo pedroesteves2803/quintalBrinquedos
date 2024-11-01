@@ -6,7 +6,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CredibilityStatementsResource\Pages;
 use App\Models\CredibilityStatements;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -41,35 +43,48 @@ class CredibilityStatementsResource extends Resource
                     ])
                     ->columnSpan('full'),
 
-                TextInput::make('title_advantage_one')
-                    ->label('Título da Vantagem 1')
-                    ->required()
-                    ->columnSpan('full'),
+                Grid::make(3)
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                TextInput::make('title_advantage_one')
+                                    ->label('Título da Vantagem 1')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('subtitle_advantage_one')
-                    ->label('Subtítulo da Vantagem 1')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('subtitle_advantage_one')
+                                    ->label('Subtítulo da Vantagem 1')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])->columnSpan(1),
 
-                TextInput::make('title_advantage_two')
-                    ->label('Título da Vantagem 2')
-                    ->required()
-                    ->columnSpan('full'),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('title_advantage_two')
+                                    ->label('Título da Vantagem 2')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('subtitle_advantage_two')
-                    ->label('Subtítulo da Vantagem 2')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('subtitle_advantage_two')
+                                    ->label('Subtítulo da Vantagem 2')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])->columnSpan(1),
 
-                TextInput::make('title_advantage_three')
-                    ->label('Título da Vantagem 3')
-                    ->required()
-                    ->columnSpan('full'),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('title_advantage_three')
+                                    ->label('Título da Vantagem 3')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('subtitle_advantage_three')
-                    ->label('Subtítulo da Vantagem 3')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('subtitle_advantage_three')
+                                    ->label('Subtítulo da Vantagem 3')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])
+                            ->columnSpan(1),
+                    ])
             ]);
     }
 

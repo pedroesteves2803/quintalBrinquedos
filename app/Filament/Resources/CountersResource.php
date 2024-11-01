@@ -6,6 +6,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CountersResource\Pages;
 use App\Models\Counters;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -21,38 +23,52 @@ class CountersResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('counter_one')
-                    ->numeric()
-                    ->label('Contador 1')
-                    ->required()
-                    ->columnSpan('full'),
+                Grid::make(3)
+                    ->schema([
+                        Section::make()
+                            ->schema([
+                                TextInput::make('counter_one')
+                                    ->numeric()
+                                    ->label('Contador 1')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('counter_one_text')
-                    ->label('Descrição do Contador 1')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('counter_one_text')
+                                    ->label('Descrição do Contador 1')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])->columnSpan(1),
 
-                TextInput::make('counter_two')
-                    ->numeric()
-                    ->label('Contador 2')
-                    ->required()
-                    ->columnSpan('full'),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('counter_two')
+                                    ->numeric()
+                                    ->label('Contador 2')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('counter_two_text')
-                    ->label('Descrição do Contador 2')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('counter_two_text')
+                                    ->label('Descrição do Contador 2')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])->columnSpan(1),
 
-                TextInput::make('counter_three')
-                    ->numeric()
-                    ->label('Contador 3')
-                    ->required()
-                    ->columnSpan('full'),
+                        Section::make()
+                            ->schema([
+                                TextInput::make('counter_three')
+                                    ->numeric()
+                                    ->label('Contador 3')
+                                    ->required()
+                                    ->columnSpan('full'),
 
-                TextInput::make('counter_three_text')
-                    ->label('Descrição do Contador 3')
-                    ->required()
-                    ->columnSpan('full'),
+                                TextInput::make('counter_three_text')
+                                    ->label('Descrição do Contador 3')
+                                    ->required()
+                                    ->columnSpan('full'),
+                            ])
+                        ->columnSpan(1),
+
+                    ])
             ]);
     }
 
