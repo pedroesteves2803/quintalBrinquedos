@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Hind Vadodara", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {    list-style: none;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: var(--WHITE-BACKGROUND);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 15px;
+    margin: 0 auto;
+}
