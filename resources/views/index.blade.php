@@ -11,38 +11,66 @@
     </head>
     <body>
         <header class="header">
-                <nav class="nav">
-                    <ul class="menu">
-                      <li><a href="/">Sobre</a></li>
-                      <li><a href="/">Produtos</a></li>
-                      <li><a href="/">Lojas</a></li>
-                      <li><a href="/">Contato</a></li>
-                    </ul>
-                </nav>
+            <div class="container">
 
-                <img class="logo" src="{{ asset('images/page/logo.png') }}" alt="Logo - Quintal brinquedos">
+                <div class="itens">
+                    <nav class="nav">
+                        <ul class="menu">
+                          <li><a href="/">Sobre</a></li>
+                          <li><a href="/">Produtos</a></li>
+                          <li><a href="/">Lojas</a></li>
+                          <li><a href="/">Contato</a></li>
+                        </ul>
+                    </nav>
+
+                    <img class="logo" src="{{ asset('images/page/logo.png') }}" alt="Logo - Quintal brinquedos">
+
+                </div>
+            </div>
         </header>
+
+        <main>
+
+            <div class="container">
+                <section class="counter">
+                    <div class="counter-item">
+                        <h1>1mil</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                    <div class="counter-item">
+                        <h1>5mil</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                    <div class="counter-item">
+                        <h1>20uni</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                </section>
+
+
+                <section class="counter">
+                    <div class="counter-item">
+                        <h1>1mil</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                    <div class="counter-item">
+                        <h1>5mil</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                    <div class="counter-item">
+                        <h1>20uni</h1>
+                        <p>Clientes atendidos</p>
+                    </div>
+                </section>
+
+
+
+
+            </div>
+
+
+        </main>
+
     </body>
 
-
-    <main>
-
-
-        <section class="counter">
-            <div class="counter-item">
-                <h1>1mil</h1>
-                <p>Clientes atendidos</p>
-            </div>
-            <div class="counter-item">
-                <h1>5mil</h1>
-                <p>Clientes atendidos</p>
-            </div>
-            <div class="counter-item">
-                <h1>20uni</h1>
-                <p>Clientes atendidos</p>
-            </div>
-        </section>
-
-
-    </main>
 </html>
