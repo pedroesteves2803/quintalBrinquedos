@@ -10,41 +10,39 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <header class="header">
-            <div class="container">
                 <nav class="nav">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#sobre">Sobre nós</a></li>
-                        <li><a href="#produtos">Produtos</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                    <ul class="menu">
+                      <li><a href="/">Sobre</a></li>
+                      <li><a href="/">Produtos</a></li>
+                      <li><a href="/">Lojas</a></li>
+                      <li><a href="/">Contato</a></li>
                     </ul>
                 </nav>
-                <div class="logo-container">
-                    <img class="logo" src="{{ asset('images/page/logo.png') }}" alt="Logo - Quintal brinquedos">
-                </div>
-            </div>
-        </header>
 
-        <section class="container home-section">
-            <div class="home-content">
-                <h2>CATÁLOGO | 2025</h2>
-                <h1>Os melhores brinquedos,<br>Estão aqui!</h1>
-                <p>Entregamos e Instalamos</p>
-                <a href="#comprar" class="home-button">COMPRAR</a>
+                <img class="logo" src="{{ asset('images/page/logo.png') }}" alt="Logo - Quintal brinquedos">
+        </header>
+    </body>
+
+
+    <main>
+
+
+        <section class="counter">
+            <div class="counter-item">
+                <h1>1mil</h1>
+                <p>Clientes atendidos</p>
             </div>
-            <div class="home-image">
-                <img src="{{ asset('images/page/image.png') }}" alt="Imagem de brinquedo">
+            <div class="counter-item">
+                <h1>5mil</h1>
+                <p>Clientes atendidos</p>
+            </div>
+            <div class="counter-item">
+                <h1>20uni</h1>
+                <p>Clientes atendidos</p>
             </div>
         </section>
 
 
-
-    {{-- <div class="container">
-        <h1>Teste</h1>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores iure, consequuntur repellendus dicta veniam laboriosam, voluptate dolore rem vitae inventore placeat maiores nam rerum. Incidunt dolorum vero ea non. Consequatur?</p>
-    </div> --}}
-    </body>
+    </main>
 </html>
