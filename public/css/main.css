@@ -1,5 +1,5 @@
 html {
-    font-size: 62.5%; /* Usando uma base de 10px para 1rem ser igual a 10px */
+    font-size: 62.5%;
 }
 
 body {
@@ -9,19 +9,15 @@ body {
     color: rgba(0, 102, 0, 1);
 }
 
-/* Imagens devem ser responsivas */
 img {
     max-width: 100%;
-    height: auto;
     display: block;
 }
 
-/* Links sem sublinhado */
 a {
     text-decoration: none;
 }
 
-/* Removendo margens e paddings de listas */
 ul {
     margin: 0;
     padding: 0;
@@ -32,17 +28,14 @@ p, h1, h2, h3 {
     margin: 0;
 }
 
-/* Ajustando o padding do main */
 main {
     padding-top: 3rem;
 }
 
-/* Header com sombra */
 .header {
     box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.15);
 }
 
-/* Container com largura máxima */
 .container {
     margin: 0 auto;
     max-width: 1200px;
@@ -50,7 +43,12 @@ main {
     padding-right: 3.2rem;
 }
 
-/* Menu flexível */
+.header .items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .menu {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +65,6 @@ main {
 .menu li a:hover {
     color: rgba(0, 102, 0, 1);
 }
-
 
 .home-wrapper {
     position: relative;
