@@ -8,13 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    @vite(['resources/js/app.js'])
 </head>
 <body>
     <header class="header">
         <div class="container">
 
             <div class="items">
-                <img class="logo" src="{{ asset('images/page/logo.png') }}" alt="Logo - Quintal Brinquedos">
+                <img class="logo" src="{{ asset('images/logo/logo.svg') }}" alt="Logo - Quintal Brinquedos">
 
                 <nav class="navigation">
                     <ul class="menu">
@@ -86,7 +89,7 @@
 
         <div class="catalog-wrapper">
             <div class="container">
-                <section class="catalog">
+                {{-- <section class="catalog">
                     <div class="catalog-header">
                         <div class="catalog-titles">
                             <h1>Catálogo</h1>
@@ -143,7 +146,67 @@
                     <div class="buttons">
 
                     </div>
+                </section> --}}
+
+                <section class="catalog">
+                    <div class="catalog-header">
+                        <div class="catalog-titles">
+                            <h1>Catálogo</h1>
+                            <h2>Nossos produtos</h2>
+                        </div>
+
+                        <div class="catalog-links">
+                            <a href="" class="active">Brinquedos</a>
+                            <a href="">Madeiras</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper catalog-body">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+
+                            <div class="swiper-slide item">
+                                <img src="{{ asset('images/img4.png') }}" alt="">
+                                <h2>Gangorra</h2>
+                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </section>
+
             </div>
         </div>
 
@@ -198,7 +261,149 @@
 
         </div>
 
+        <div class="contact-wrapper">
+            <div class="container">
+                <section class="contact-section">
+                    <div class="contact-header">
+                        <h2>Orçamento</h2>
+                        <h3>Encaminhe um e-mail</h3>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="#">
+                            <div class="subject-selection">
+                                <label class="text">Selecione o assunto desejado</label>
+                                <div class="button-group">
+                                    <input type="radio" id="option1" name="subject" value="option1">
+                                    <label for="option1" class="radio-button">Orçamento</label>
+
+                                    <input type="radio" id="option2" name="subject" value="option2">
+                                    <label for="option2" class="radio-button">Informações</label>
+
+                                    <input type="radio" id="option3" name="subject" value="option3">
+                                    <label for="option3" class="radio-button">Outros</label>
+                                </div>
+                            </div>
+
+                            <div class="contact-details">
+                                {{--
+                                <div class="details-item">
+                                    <p>Erro no email</p>
+                                </div> --}}
+
+                                <div class="details-item">
+                                    <div class="item">
+                                        <label for="first-name">Nome</label>
+                                        <input type="text" name="first-name" id="first-name">
+                                    </div>
+
+                                    <div class="item">
+                                        <label for="last-name">Sobrenome</label>
+                                        <input type="text" name="last-name" id="last-name">
+                                    </div>
+                                </div>
+
+                                <div class="details-item">
+                                    <div class="item">
+                                        <label for="phone">Telefone</label>
+                                        <input type="text" name="phone" id="phone">
+                                    </div>
+
+                                    <div class="item">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email">
+                                    </div>
+
+                                </div>
+
+                                <div class="details-item">
+                                    <div class="item">
+                                        <label for="message">Mensagem</label>
+                                        <textarea name="message" id="message"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="details-btn">
+                                    <div class="item">
+                                        <button type="submit">enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <section class="clients-section">
+                <div class="clients-header">
+                    <h2>O que nossos clientes</h2>
+                    <h3>estão comentando?</h3>
+                    <p>Na Quintal Brinquedos, a satisfação dos nossos clientes é nossa maior prioridade. Cada projeto é pensado para oferecer experiências únicas, seguras e divertidas. Confira o que algumas pessoas têm a dizer sobre as transformações que realizamos!<p>
+                </div>
+
+                <div class="comments">
+                    <div class="item active">
+                        <h3>Renato</h3>
+                        <p>Um lugar com bom atendimento e qualidade em seus produtos, pontualidade na entrega e instalação! Recomendo e indico a Quintal Brinquedos!</p>
+                    </div>
+
+                    <div class="item">
+                        <h3>Renato</h3>
+                        <p>Um lugar com bom atendimento e qualidade em seus produtos, pontualidade na entrega e instalação! Recomendo e indico a Quintal Brinquedos!</p>
+                    </div>
+
+                    <div class="item">
+                        <h3>Renato</h3>
+                        <p>Um lugar com bom atendimento e qualidade em seus produtos, pontualidade na entrega e instalação! Recomendo e indico a Quintal Brinquedos!</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
     </main>
+
+
+    <footer>
+        <div class="container">
+            <section class="footer-section">
+                <img class="logo" src="{{ asset('images/logo/logo.svg') }}" alt="Logo - Quintal Brinquedos">
+
+                <div class="address">
+                    <h3>Endereço</h3>
+
+                    <p class="local">R CESARE POLLINI - JARDIM LOURDES - SP</p>
+
+                    <p class="phone">11 4119-0077</p>
+
+                    <p class="mail">expediente@nalternativa.com.br</p>
+                </div>
+
+                <nav class="navigation">
+                    <h3>menu</h3>
+                    <ul class="menu">
+                        <li><a href="/">Sobre</a></li>
+                        <li><a href="/">Produtos</a></li>
+                        <li><a href="/">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <section class="social">
+                    <a href=""><img src="{{ asset('images/icons/icon-facebook.svg') }}" alt=""></a>
+                    <a href=""><img src="{{ asset('images/icons/icon-instagram.svg') }}" alt=""></a>
+                </section>
+            </section>
+        </div>
+
+        <div class="reserved">
+            <div class="container">
+                <p><span>© Quintal Brinquedos</span>, Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
