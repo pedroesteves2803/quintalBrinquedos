@@ -42,10 +42,9 @@ class ContactResource extends Resource
                         default => $record->subject_type,
                     })
                     ->label('Tipo'),
-
-//                ToggleColumn::make('active')
-//                    ->visible(function ($record) {
-//                            dd($record);
+//                ToggleColumn::make('_active')
+//                    ->state(function (Contact $record) {
+//                            return $record->subject_type === 3 ? $record->active : null;
 //                    })
 //                    ->label('Exibir'),
             ])

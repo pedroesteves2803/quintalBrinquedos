@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="item-right">
-                    <img src="{{ asset('images/img1.png') }}" alt="">
+                    <img src="{{ Storage::disk('public')->url($aboutUs->image) }}" alt="">
                 </div>
             </section>
 
