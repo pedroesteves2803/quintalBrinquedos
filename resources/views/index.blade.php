@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 </head>
 <body>
-    <header class="header">
+    <header class="header">``
         <div class="container">
 
             <div class="items">
@@ -85,132 +86,65 @@
                 </div>
             </section>
 
-        </div>
-
-        <div class="catalog-wrapper">
-            <div class="container">
-                {{-- <section class="catalog">
-                    <div class="catalog-header">
-                        <div class="catalog-titles">
-                            <h1>Catálogo</h1>
-                            <h2>Nossos produtos</h2>
-                        </div>
-
-                        <div class="catalog-links">
-                            <a href="" class="active">Brinquedos</a>
-                            <a href="">Madeiras</a>
-                        </div>
+            <section class="catalog">
+                <div class="catalog-header">
+                    <div class="catalog-titles">
+                        <h1>Catálogo</h1>
+                        <h2>Nossos produtos</h2>
                     </div>
 
-                    <div class="catalog-body">
-                        <div class="item">
+                    <div class="catalog-links">
+                        <a href="" class="active">Brinquedos</a>
+                        <a href="">Madeiras</a>
+                    </div>
+                </div>
+
+                <div class="swiper catalog-body">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
 
-                        <div class="item">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
 
-                        <div class="item">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
 
-
-                        <div class="item">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
 
-
-                        <div class="item">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
 
-
-                        <div class="item">
+                        <div class="swiper-slide item">
                             <img src="{{ asset('images/img4.png') }}" alt="">
                             <h2>Gangorra</h2>
                             <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
                         </div>
                     </div>
 
-                    <div class="buttons">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
 
-                    </div>
-                </section> --}}
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
 
-                <section class="catalog">
-                    <div class="catalog-header">
-                        <div class="catalog-titles">
-                            <h1>Catálogo</h1>
-                            <h2>Nossos produtos</h2>
-                        </div>
-
-                        <div class="catalog-links">
-                            <a href="" class="active">Brinquedos</a>
-                            <a href="">Madeiras</a>
-                        </div>
-                    </div>
-
-                    <div class="swiper catalog-body">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-
-                            <div class="swiper-slide item">
-                                <img src="{{ asset('images/img4.png') }}" alt="">
-                                <h2>Gangorra</h2>
-                                <p>Gangorra com dois assentos, com pneu para amortecimento e a madeira com acabamento em Stain Triplo Filtro Solar.</p>
-                            </div>
-                        </div>
-
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-
-        <div class="container">
             <section class="credibility">
                 <div class="credibility-text">
                     <h2>Por que Confiar?</h2>
@@ -259,84 +193,78 @@
                 </div>
             </section>
 
-        </div>
+            <section class="contact-section">
+                <div class="contact-header">
+                    <h2>Orçamento</h2>
+                    <h3>Encaminhe um e-mail</h3>
+                </div>
 
-        <div class="contact-wrapper">
-            <div class="container">
-                <section class="contact-section">
-                    <div class="contact-header">
-                        <h2>Orçamento</h2>
-                        <h3>Encaminhe um e-mail</h3>
-                    </div>
+                <div class="contact-form">
+                    <form action="#">
+                        <div class="subject-selection">
+                            <label class="text">Selecione o assunto desejado</label>
+                            <div class="button-group">
+                                <input type="radio" id="option1" name="subject" value="option1">
+                                <label for="option1" class="radio-button">Orçamento</label>
 
-                    <div class="contact-form">
-                        <form action="#">
-                            <div class="subject-selection">
-                                <label class="text">Selecione o assunto desejado</label>
-                                <div class="button-group">
-                                    <input type="radio" id="option1" name="subject" value="option1">
-                                    <label for="option1" class="radio-button">Orçamento</label>
+                                <input type="radio" id="option2" name="subject" value="option2">
+                                <label for="option2" class="radio-button">Informações</label>
 
-                                    <input type="radio" id="option2" name="subject" value="option2">
-                                    <label for="option2" class="radio-button">Informações</label>
+                                <input type="radio" id="option3" name="subject" value="option3">
+                                <label for="option3" class="radio-button">Outros</label>
+                            </div>
+                        </div>
 
-                                    <input type="radio" id="option3" name="subject" value="option3">
-                                    <label for="option3" class="radio-button">Outros</label>
+                        <div class="contact-details">
+                            {{--
+                            <div class="details-item">
+                                <p>Erro no email</p>
+                            </div> --}}
+
+                            <div class="details-item">
+                                <div class="item">
+                                    <label for="first-name">Nome</label>
+                                    <input type="text" name="first-name" id="first-name">
+                                </div>
+
+                                <div class="item">
+                                    <label for="last-name">Sobrenome</label>
+                                    <input type="text" name="last-name" id="last-name">
                                 </div>
                             </div>
 
-                            <div class="contact-details">
-                                {{--
-                                <div class="details-item">
-                                    <p>Erro no email</p>
-                                </div> --}}
-
-                                <div class="details-item">
-                                    <div class="item">
-                                        <label for="first-name">Nome</label>
-                                        <input type="text" name="first-name" id="first-name">
-                                    </div>
-
-                                    <div class="item">
-                                        <label for="last-name">Sobrenome</label>
-                                        <input type="text" name="last-name" id="last-name">
-                                    </div>
+                            <div class="details-item">
+                                <div class="item">
+                                    <label for="phone">Telefone</label>
+                                    <input type="text" name="phone" id="phone">
                                 </div>
 
-                                <div class="details-item">
-                                    <div class="item">
-                                        <label for="phone">Telefone</label>
-                                        <input type="text" name="phone" id="phone">
-                                    </div>
-
-                                    <div class="item">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" id="email">
-                                    </div>
-
+                                <div class="item">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email">
                                 </div>
 
-                                <div class="details-item">
-                                    <div class="item">
-                                        <label for="message">Mensagem</label>
-                                        <textarea name="message" id="message"></textarea>
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="details-btn">
-                                    <div class="item">
-                                        <button type="submit">enviar</button>
-                                    </div>
+                            <div class="details-item">
+                                <div class="item">
+                                    <label for="message">Mensagem</label>
+                                    <textarea name="message" id="message"></textarea>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                </section>
-            </div>
+
+                            <div class="details-btn">
+                                <div class="item">
+                                    <button type="submit">enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
 
         <div class="container">
-
             <section class="clients-section">
                 <div class="clients-header">
                     <h2>O que nossos clientes</h2>
@@ -361,7 +289,6 @@
                     </div>
                 </div>
             </section>
-
         </div>
 
     </main>
