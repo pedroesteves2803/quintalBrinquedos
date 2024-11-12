@@ -42,11 +42,11 @@ class ContactResource extends Resource
                         default => $record->subject_type,
                     })
                     ->label('Tipo'),
-//                ToggleColumn::make('_active')
-//                    ->state(function (Contact $record) {
-//                            return $record->subject_type === 3 ? $record->active : null;
-//                    })
-//                    ->label('Exibir'),
+                ToggleColumn::make('active')
+                    ->disabled(function (Contact $record) {
+                            return $record->subject_type !== SubjectTypeEnum::Message->value;
+                    })
+                    ->label('Exibir'),
             ])
             ->filters([
                 SelectFilter::make('subject_type')
