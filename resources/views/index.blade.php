@@ -37,18 +37,18 @@
             <div class="container">
                 <div class="home">
                     <div class="home-content">
-                        <h1 class="home-year">CATÁLOGO | 2025</h1>
+                        <h1 class="home-year">{{ $home->title }}</h1>
 
-                        <h2 class="home-main-title">Os melhores brinquedos,</h2>
-                        <h2 class="home-subtitle">Estão aqui!</h2>
+                        <h2 class="home-main-title">{{ $home->subtitle }}</h2>
+                        <h2 class="home-subtitle">{{ $home->description_line_one }}</h2>
 
-                        <p class="home-description">Entregamos e Instalamos</p>
+                        <p class="home-description">{{ $home->description_line_two }}</p>
 
                         <a href="#contato" class="home-button">Comprar</a>
                     </div>
 
                     <div class="home-image">
-                        <img src="{{ asset('images/img3.png') }}" alt="">
+                        <img src="{{ Storage::disk('public')->url($home->image) }}" alt="">
                     </div>
                 </div>
             </div>
