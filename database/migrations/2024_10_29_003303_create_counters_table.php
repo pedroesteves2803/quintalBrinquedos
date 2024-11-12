@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('counters', function (Blueprint $table) {
             $table->id();
-            $table->integer('counter_one');
+            $table->string('counter_one');
             $table->string('counter_one_text');
-            $table->integer('counter_two');
+            $table->string('counter_two');
             $table->string('counter_two_text');
-            $table->integer('counter_three');
+            $table->string('counter_three');
             $table->string('counter_three_text');
             $table->timestamps();
         });

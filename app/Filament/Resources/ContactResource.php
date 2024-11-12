@@ -43,9 +43,11 @@ class ContactResource extends Resource
                     })
                     ->label('Tipo'),
 
-                ToggleColumn::make('active')
-                    ->hidden(fn ($record) => !$record || $record->subject_type !== SubjectTypeEnum::Message->value)
-                    ->label('Exibir'),
+//                ToggleColumn::make('active')
+//                    ->visible(function ($record) {
+//                            dd($record);
+//                    })
+//                    ->label('Exibir'),
             ])
             ->filters([
                 SelectFilter::make('subject_type')

@@ -28,7 +28,6 @@ class CountersResource extends Resource
                         Section::make()
                             ->schema([
                                 TextInput::make('counter_one')
-                                    ->numeric()
                                     ->label('Contador 1')
                                     ->required()
                                     ->columnSpan('full'),
@@ -42,7 +41,6 @@ class CountersResource extends Resource
                         Section::make()
                             ->schema([
                                 TextInput::make('counter_two')
-                                    ->numeric()
                                     ->label('Contador 2')
                                     ->required()
                                     ->columnSpan('full'),
@@ -56,7 +54,6 @@ class CountersResource extends Resource
                         Section::make()
                             ->schema([
                                 TextInput::make('counter_three')
-                                    ->numeric()
                                     ->label('Contador 3')
                                     ->required()
                                     ->columnSpan('full'),

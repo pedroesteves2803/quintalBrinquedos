@@ -20,7 +20,4 @@ class Contact extends Model
         'subject_type',
         'active',
     ];
-
-//[1 => 'orcamento', 2 => 'informacoes', 3 => 'comentario']
-
 }

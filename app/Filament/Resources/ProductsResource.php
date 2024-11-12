@@ -46,14 +46,7 @@ class ProductsResource extends Resource
                 FileUpload::make('image')
                     ->label('Imagem')
                     ->required()
-                    ->columnSpan('full'),
-
-                Select::make('category_id')
-                    ->label('Categoria')
-                    ->relationship('category', 'name')
-                    ->required()
-                    ->placeholder('Selecione uma categoria')
-                    ->columnSpan('full'),
+                    ->columnSpan('full')
             ]);
     }
 
@@ -66,13 +59,6 @@ class ProductsResource extends Resource
 
                 TextColumn::make('category.name')
                     ->label('Categoria'),
-            ])
-            ->filters([
-                SelectFilter::make('category_id')
-                    ->label('Categoria')
-                    ->relationship('category', 'name')
-                    ->searchable()
-                    ->preload(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

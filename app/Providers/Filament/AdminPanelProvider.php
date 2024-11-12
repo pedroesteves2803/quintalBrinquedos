@@ -127,16 +127,6 @@ class AdminPanelProvider extends PanelProvider
                 ->icon('heroicon-o-book-open') // Ícone de livro aberto
                 ->group('Catálogo'),
 
-            NavigationItem::make('Categorias')
-                ->url(fn (): string => ListCategories::class::getUrl())
-                ->isActiveWhen(
-                    fn (): bool => request()->routeIs(
-                        $this->makeWildCardForRouteName(ListCategories::getRouteName())
-                    )
-                )
-                ->icon('heroicon-o-tag') // Ícone de etiqueta
-                ->group('Catálogo'),
-
             NavigationItem::make('Produtos')
                 ->url(fn (): string => ListProducts::class::getUrl())
                 ->isActiveWhen(
