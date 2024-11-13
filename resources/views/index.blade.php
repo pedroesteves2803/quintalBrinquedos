@@ -7,7 +7,9 @@
     <meta property="og:title" content="Quintal Brinquedos">
     <meta property="og:description" content="{{ $home->subtitle }} - {{ $home->description_line_one }}">
     <meta property="og:image" content="{{ Storage::disk('public')->url($home->image) }}">
+
     <title>Quintal Brinquedos</title>
+    <link rel="icon" href="{{ asset('/images/logo/logo.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    @vite(['resources/css/main.css'])
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <!-- Scripts -->
@@ -32,10 +34,9 @@
 
                 <nav class="navigation">
                     <ul class="menu">
-                        <li><a href="/">Sobre</a></li>
-                        <li><a href="/">Produtos</a></li>
-                        <li><a href="/">Lojas</a></li>
-                        <li><a href="/">Contato</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#catalog">Produtos</a></li>
+                        <li><a href="#formulario">Contato</a></li>
                     </ul>
                 </nav>
             </div>
@@ -54,7 +55,7 @@
 
                         <p class="home-description">{{ $home->description_line_two }}</p>
 
-                        <a href="#contato" class="home-button">Comprar</a>
+                        <a href="#formulario" class="home-button">Comprar</a>
                     </div>
 
                     <div class="home-image">
@@ -81,7 +82,7 @@
                 </div>
             </section>
 
-            <section class="about-us">
+            <section class="about-us" id="about">
                 <div class="item-left">
                     <h1>{{ $aboutUs->title }}</h1>
                     <h2>{{ $aboutUs->subtitle }}</h2>
@@ -93,7 +94,7 @@
                 </div>
             </section>
 
-            <section class="catalog">
+            <section class="catalog" id="catalog">
                 <div class="catalog-header">
                     <div class="catalog-titles">
                         <h1>{{ $catalog->title }}</h1>
@@ -234,7 +235,7 @@
                             <div class="details-item">
                                 <div class="item">
                                     <label for="message">Mensagem</label>
-                                    <textarea minlength="200" name="message" id="message" required>{{ old('message') }}</textarea>
+                                    <textarea minlength="10" name="message" id="message" required>{{ old('message') }}</textarea>
                                 </div>
                             </div>
 
@@ -247,26 +248,26 @@
                     </form>
                 </div>
             </section>
-        </div>
 
-        <div class="container">
-            <section class="clients-section">
-                <div class="clients-header">
-                    <h2>{{ $client->title }}</h2>
-                    <h3>{{ $client->subtitle }}</h3>
-                    <p>{{ $client->description }}<p>
-                </div>
+            @if(!$contacts->isEmpty())
+                <section class="clients-section">
+                    <div class="clients-header">
+                        <h2>{{ $client->title }}</h2>
+                        <h3>{{ $client->subtitle }}</h3>
+                        <p>{{ $client->description }}<p>
+                    </div>
 
-                <div class="comments">
-                    @foreach($contacts as $contact)
-                        <div class="item @if($loop->first) active @endif">
-                            <h3>{{ $contact->name }}</h3>
-                            <p>{{ $contact->message }}</p>
-                        </div>
-                    @endforeach
+                    <div class="comments">
+                        @foreach($contacts as $contact)
+                            <div class="item @if($loop->first) active @endif">
+                                <h3>{{ $contact->name }}</h3>
+                                <p>{{ $contact->message }}</p>
+                            </div>
+                        @endforeach
 
-                </div>
-            </section>
+                    </div>
+                </section>
+            @endif
         </div>
 
     </main>
@@ -290,9 +291,9 @@
                 <nav class="navigation">
                     <h3>menu</h3>
                     <ul class="menu">
-                        <li><a href="/">Sobre</a></li>
-                        <li><a href="/">Produtos</a></li>
-                        <li><a href="/">Contato</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#catalog">Produtos</a></li>
+                        <li><a href="#formulario">Contato</a></li>
                     </ul>
                 </nav>
 

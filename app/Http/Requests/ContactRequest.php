@@ -19,7 +19,7 @@ class ContactRequest extends FormRequest
             'last_name' => ['required', 'string', 'min:2', 'max:255'],
             'phone' => ['required', 'regex:/^\(\d{2}\) \d{4,5}-\d{4}$/'],
             'email' => ['required', 'email', 'max:255'],
-            'message' => ['required', 'string', 'min:200'],
+            'message' => ['required', 'string', 'min:10'],
         ];
     }
 

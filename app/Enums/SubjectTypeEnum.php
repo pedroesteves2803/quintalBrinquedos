@@ -14,8 +14,7 @@ enum SubjectTypeEnum: int
     {
         return [
             self::Budget->value         => 'Orçamento',
-            self::Information->value       => 'Informações',
-            self::Message->value => 'Mensagem',
+            self::Information->value       => 'Informações'
         ];
     }
 }

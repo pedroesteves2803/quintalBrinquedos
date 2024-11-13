@@ -3,20 +3,22 @@
 namespace App\Filament\Resources;
 
 use App\Enums\SubjectTypeEnum;
-use App\Filament\Resources\ContactResource\Pages;
+use App\Filament\Resources\MessageResource\Pages;
 use App\Models\Contact;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 
-class ContactResource extends Resource
+class MessageResource extends Resource
 {
     protected static ?string $model = Contact::class;
+
     protected static ?string $modelLabel = 'Contato';
     protected static ?string $pluralModelLabel = 'Contatos';
     protected static bool $shouldRegisterNavigation = false;
@@ -24,7 +26,7 @@ class ContactResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
-            ->where('subject_type', '!=', SubjectTypeEnum::Message->value);
+            ->where('subject_type', SubjectTypeEnum::Message->value);
     }
 
     public static function table(Table $table): Table
@@ -48,13 +50,26 @@ class ContactResource extends Resource
                         default => $record->subject_type,
                     })
                     ->label('Tipo'),
-            ])
-            ->filters([
-                SelectFilter::make('subject_type')
-                    ->label('Categoria')
-                    ->options(SubjectTypeEnum::toArray())
-                    ->searchable()
-                    ->preload()
+
+                    ToggleColumn::make('active')
+                        ->label('Exibir')
+                        ->afterStateUpdated(function (Contact $record, $state) {
+                            $activeCount = Contact::where('active', true)->count();
+
+                            if ($activeCount >= 4 && $state === true) {
+                                Notification::make()
+                                    ->warning()
+                                    ->title('Limite de Registros Ativos Alcançado')
+                                    ->body('Você não pode exibir mais de 3 registros!')
+                                    ->send();
+
+                                $record->update(['active' => false]);
+
+                                return false;
+                            }
+
+                            return true;
+                        })
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -117,7 +132,7 @@ class ContactResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListContacts::route('/'),
+            'index' => Pages\ListMessages::route('/'),
         ];
     }
 }

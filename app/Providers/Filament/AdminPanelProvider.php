@@ -7,13 +7,13 @@ namespace App\Providers\Filament;
 use App\Filament\Resources\AboutUsResource\Pages\EditAboutUs;
 use App\Filament\Resources\BudgetResource\Pages\EditBudget;
 use App\Filament\Resources\CatalogResource\Pages\EditCatalog;
-use App\Filament\Resources\CategoriesResource\Pages\ListCategories;
 use App\Filament\Resources\ClientResource\Pages\EditClient;
 use App\Filament\Resources\ConfigResource\Pages\EditConfig;
 use App\Filament\Resources\ContactResource\Pages\ListContacts;
 use App\Filament\Resources\CountersResource\Pages\EditCounters;
 use App\Filament\Resources\CredibilityStatementsResource\Pages\EditCredibilityStatements;
 use App\Filament\Resources\HomeResource\Pages\EditHome;
+use App\Filament\Resources\MessageResource\Pages\ListMessages;
 use App\Filament\Resources\ProductsResource\Pages\ListProducts;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -45,6 +45,7 @@ class AdminPanelProvider extends PanelProvider
                 'secondary' => '#006600',
                 'accent' => '#F29130',
             ])
+            ->favicon(asset('images/logo.png'))
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('45px')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
@@ -156,9 +157,9 @@ class AdminPanelProvider extends PanelProvider
                     )
                 )
                 ->icon('heroicon-o-currency-dollar') // Ícone de dólar
-                ->group('Orçamento'),
+                ->group('Contato'),
 
-            NavigationItem::make('Contatos')
+            NavigationItem::make('Contato')
                 ->url(fn (): string => ListContacts::getUrl())
                 ->isActiveWhen(
                     fn (): bool => request()->routeIs(
@@ -166,7 +167,17 @@ class AdminPanelProvider extends PanelProvider
                     )
                 )
                 ->icon('heroicon-o-phone') // Ícone de telefone
-                ->group('Orçamento'),
+                ->group('Contato'),
+
+            NavigationItem::make('Mensagens')
+                ->url(fn (): string => ListMessages::getUrl())
+                ->isActiveWhen(
+                    fn (): bool => request()->routeIs(
+                        $this->makeWildCardForRouteName(ListMessages::getRouteName())
+                    )
+                )
+                ->icon('heroicon-o-chat-bubble-left-ellipsis') // Ícone de mensagem
+                ->group('Contato'),
 
             // Clientes
             NavigationItem::make('Clientes')
