@@ -45,8 +45,8 @@ class AdminPanelProvider extends PanelProvider
                 'secondary' => '#006600',
                 'accent' => '#F29130',
             ])
-            ->favicon(asset('images/logo.png'))
-            ->brandLogo(asset('images/logo.png'))
+            ->favicon(asset('/images/logo/logo.png'))
+            ->brandLogo(asset('/images/logo/logo.png'))
             ->brandLogoHeight('45px')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
