@@ -480,7 +480,7 @@ main {
 .about-us .item-right::before {
     content: "";
     display: inline-block;
-    background-image: url('/images/img2.png');
+    background-image: url('/images/background/dot_frame.svg');
     background-size: 22.3rem 22.3rem;
     background-repeat: no-repeat;
     width: 23.8905rem;
@@ -588,7 +588,7 @@ main {
 .catalog::before {
     content: "";
     display: block;
-    background-image: url('/images/background/catalog_image_background.svg');
+    background-image: url('/resources/images/background/catalog_image_background.svg');
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -1012,6 +1012,23 @@ main {
     z-index: -1;
 }
 
+.contact-section .contact-form{
+    position: relative;
+}
+
+.contact-section .contact-form::before {
+    content: "";
+    display: inline-block;
+    background-image: url('/images/background/dot_frame.svg');
+    background-size: 22.3rem 22.3rem;
+    background-repeat: no-repeat;
+    width: 23.8905rem;
+    height: 23.8904rem;
+    position: absolute;
+    top: 35.5rem;
+    left: 90rem;
+}
+
 .contact-section .contact-header h2 {
     color: #F29130;
     font-size: 4.8rem;
@@ -1182,6 +1199,11 @@ main {
 
     .contact-section .contact-form form {
         flex-wrap: wrap;
+    }
+
+    .contact-section .contact-form::before {
+        content: "";
+        display: none;
     }
 }
 

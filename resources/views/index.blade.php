@@ -17,16 +17,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    @vite(['resources/css/main.css'])
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js"></script>
-    @vite(['resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.7/dist/inputmask.min.js" defer></script>
+    <script src="{{ asset('/js/doubleClick.js') }}" defer></script>
+    <script src="{{ asset('/js/mask.js') }}" defer></script>
+    <script src="{{ asset('/js/swiper.js') }}" defer></script>
+{{--    @vite(['resources/js/app.js'])--}}
 </head>
 <body>
-    <header class="header">``
+    <header class="header">
         <div class="container">
 
             <div class="items">
