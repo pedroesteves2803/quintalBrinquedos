@@ -263,7 +263,7 @@
                     <div class="comments">
                         @foreach($contacts as $contact)
                             <div class="item @if($loop->first) active @endif">
-                                <h3>{{ $contact->name }}</h3>
+                                <h3>{{ $contact->name }} {{ $contact->surname }}</h3>
                                 <p>{{ $contact->message }}</p>
                             </div>
                         @endforeach
